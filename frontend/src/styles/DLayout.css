@@ -1,0 +1,18 @@
+.ant-layout-has-sider{
+height: 100vh;
+padding: 10px;
+}
+.ant-layout-sider{
+   border-radius: 10px;
+   box-shadow: 0 0 3px #ccc;
+}
+
+.ant-menu-dark{
+   border-radius: 10px;
+   box-shadow: 0 0 3px #ccc;
+}
+
+
+
+
+
