@@ -12,6 +12,13 @@ padding: 10px;
    box-shadow: 0 0 3px #ccc;
 }
 
+.ant-layout-header{
+   line-height:0;
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
 
 
 

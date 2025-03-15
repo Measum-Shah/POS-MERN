@@ -3,4 +3,14 @@ const initialstate = {
     cartItems:[]
 }
 
-// export const rootReducer =
+ export const rootReducer = (state=initialstate,action)=>{
+    switch(action.type){
+        case 'UPDATECART':
+            return{
+                ...state,
+                cartItems:[...state.cartItems,action.payload]
+            }
+        default:
+            return state;
+    }
+ };

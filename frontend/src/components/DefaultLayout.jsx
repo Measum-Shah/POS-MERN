@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState , useEffect} from 'react';
+import { Link ,useNavigate} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -7,17 +8,26 @@ import {
   UserOutlined,
   CopyOutlined,
   LogoutOutlined ,
-  HomeOutlined 
+  HomeOutlined ,
+  ShoppingCartOutlined
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
 import '../styles/DLayout.css'
 const { Header, Sider, Content } = Layout;
 const DefaultLayout = ({children}) => {
+
+  const {cartItems} = useSelector(state=> state.rootReducer)
+  const navigate = useNavigate();
+  
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
+  // to get local storGE DATA
+  useEffect(()=>{
+    localStorage.setItem('cartItems',JSON.stringify(cartItems))
+  },[cartItems])
   return (
     
     <Layout >
@@ -65,6 +75,10 @@ const DefaultLayout = ({children}) => {
               height: 64,
             }}
           />
+          <div className="cart-item" onClick={()=>navigate('/cart')}>
+            <ShoppingCartOutlined/>
+            <p>{cartItems.length}</p>
+          </div>
         </Header>
         <Content
           style={{

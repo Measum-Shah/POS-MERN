@@ -1,3 +1,22 @@
 .card{
     margin-bottom: 2rem;
 }
+
+.item-button button{
+    width:200px;
+    margin-top: 20px;
+    background-color: rgb(34, 78, 9);
+    color: white;
+}
+
+.cart-item{
+    padding-left:20px;
+    padding-right:30px;
+    cursor: pointer;
+}
+
+.cart-item p{
+    margin-top:10px;
+    margin-left:3px;
+    font-weight: bold;
+}
